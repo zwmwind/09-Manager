@@ -83,7 +83,7 @@
                              onclick="JavaScript:this.value=''"/></span><cite>X3D5S</cite>
                 </li>
                 <li><input name="" type="submit" class="loginbtn" value="登录"
-                           onclick="javascript:window.location='main.html'"/><label><a href="#">注册</a></label><label><a
+                           onclickz="javascript:window.location='main.html'"/><label><a href="#">注册</a></label><label><a
                         href="#">忘记密码？</a></label></li>
             </ul>
         </form>
