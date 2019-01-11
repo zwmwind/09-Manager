@@ -48,4 +48,10 @@ public class UserServiceImpl implements UserService {
         logger.debug("显示所有用户的信息：" + lu);
         return lu;
     }
+
+    //用户注册
+    @Override
+    public int userRegService(User u) {
+        return ud.useRegDao(u);
+    }
 }

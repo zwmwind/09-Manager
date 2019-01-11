@@ -74,8 +74,8 @@
             <td><%=((User)session.getAttribute("user")).getUname()%></td>
             <td><%=((User)session.getAttribute("user")).getPwd()%></td>
             <%
-                int sex = ((User)session.getAttribute("user")).getSex();
-                if (sex == 1) {
+                String sex = ((User)session.getAttribute("user")).getSex();
+                if (sex.equals("1")) {
             %>
             <td>男</td>
             <%

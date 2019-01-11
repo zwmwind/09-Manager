@@ -71,6 +71,22 @@
         }
         session.removeAttribute("pwd");
     %>
+
+    <%
+        //声明java代码块进行注册成功提示语的逻辑校验
+
+        Object reg = session.getAttribute("reg");
+        if (reg != null) {
+    %>
+    <div style="text-align: center">
+        <span style="font-size:15px;color: white; font-weight:bold;">注册成功，请登录</span>
+    </div>
+
+    <%
+        }
+        session.removeAttribute("reg");
+    %>
+
     <div class="loginbox loginbox1">
         <form action="user" method="post">
             <input type="hidden" name="oper" value="login" />
@@ -83,7 +99,7 @@
                              onclick="JavaScript:this.value=''"/></span><cite>X3D5S</cite>
                 </li>
                 <li><input name="" type="submit" class="loginbtn" value="登录"
-                           onclickz="javascript:window.location='main.html'"/><label><a href="#">注册</a></label><label><a
+                           onclickz="javascript:window.location='main.html'"/><label><a href="user/reg.jsp">注册</a></label><label><a
                         href="#">忘记密码？</a></label></li>
             </ul>
         </form>

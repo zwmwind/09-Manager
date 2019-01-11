@@ -4,11 +4,11 @@ public class User {
     private int uid;
     private String uname;
     private String pwd;
-    private int sex;
+    private String sex;
     private int age;
     private String birth;
 
-    public User(int uid, String uname, String pwd, int sex, int age, String birth) {
+    public User(int uid, String uname, String pwd, String sex, int age, String birth) {
         this.uid = uid;
         this.uname = uname;
         this.pwd = pwd;
@@ -44,11 +44,11 @@ public class User {
         this.pwd = pwd;
     }
 
-    public int getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

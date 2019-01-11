@@ -37,4 +37,15 @@ public interface UserService {
      *@date 19:28 2019/1/4
      */
     List<User> userShowService();
+
+    /**
+     *@methodName userRegService
+     *@description //TODO 用户注册
+     *
+     *@param [u]
+     *@return int
+     *@author zhangweiming
+     *@date 18:06 2019-01-11
+     */
+    int userRegService(User u);
 }

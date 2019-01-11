@@ -37,4 +37,15 @@ public interface UserDao {
      *@date 19:29 2019/1/4
      */
     List<User> userShowDao();
+
+    /**
+     *@methodName useRegDao
+     *@description //TODO 用户注册
+     *
+     *@param [u]
+     *@return int
+     *@author zhangweiming
+     *@date 18:08 2019-01-11
+     */
+    int useRegDao(User u);
 }

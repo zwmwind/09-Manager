@@ -78,7 +78,7 @@
             <td><%=u.getUname()%></td>
             <td><%=u.getPwd()%></td>
             <%
-                if (u.getSex() == 1) {
+                if (u.getSex().equals("1")) {
             %>
             <td>男</td>
             <%

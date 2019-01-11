@@ -31,7 +31,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
             checkUserLogin(req, resp);
         }else if("reg".equals(oper)) {
             //调用注册功能
-            checkUserReg(req, resp);
+            userReg(req, resp);
         }else if("out".equals(oper)){
             //调用退出功能
             userOut(req, resp);
@@ -117,7 +117,40 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
 
     }
 
-    private void checkUserReg(HttpServletRequest req, HttpServletResponse resp) {
+    //注册用户
+    private void userReg(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        //获取请求信息
+            String uname = req.getParameter("uname");
+            String pwd = req.getParameter("pwd");
+            String sex = req.getParameter("sex");
+            int age = req.getParameter("age")!=""?Integer.parseInt(req.getParameter("age")):0;
+            String birth = req.getParameter("birth");
+            String[] bs = null;
+            if (birth!="") {
+                bs = birth.split("/");
+            }
+            StringBuffer sb = new StringBuffer();
+            sb.append(bs[2]);
+            sb.append("/");
+            sb.append(bs[0]);
+            sb.append("/");
+            sb.append(bs[1]);
+
+
+            //System.out.println(uname+pwd+sex+age+birth);
+            User u = new User(0, uname, pwd, sex, age, sb.toString());
+        //处理请求信息
+            //调用业务层处理
+            int index = us.userRegService(u);
+            //System.out.println(index);
+        //响应请求信息
+            if (index > 0) {
+                //获取Session
+                HttpSession hs = req.getSession();
+                hs.setAttribute("reg", "true");
+                //重定向
+                resp.sendRedirect("login.jsp");
+            }
     }
 
 }
